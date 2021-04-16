@@ -1,92 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>AirHTML</title>
   <style>
-    body,
-    html {
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
+    .wrapper > div{
+      background:rgb(194, 20, 20);
+      padding:1em;
+    }
+    .wrapper > div:nth-child(odd){
+      background:#ddd;
     }
 
-    .box-wrapper {
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-    }
 
-    #box {
-        padding: 10px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: row;
-        border: solid 1px green
-    }
-
-    #scopesettings {
-        flex-grow: 2;
-        width: 20vw;
-        height: 8vh;
-        border: solid 1px blue
-    }
-
-    #scope {
-        flex-grow: 2;
-        display: inline-flex;
-        border: solid 1px orange
-        
-    }
-
-    .middle-column {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-
-    }
-
-    .middle-column div {
-        flex-grow: 1;
-        margin: 0 8px;
-        border: solid 1px red;
-    }
-
-    .middle-column div+div {
-        margin-top: 8px
-    }
-
-    #box8 {
-        flex-grow: 1;
-        border: solid 1px black
-    }
-</style>
+  </style>
 </head>
-
 <body>
-<div class="box-wrapper">
-    <div id="box">
-      <div id ="scopesettings">
-        Scope settings
-      </div>
-        <div id="scope">
-            Scope
-        </div>
-        <div class="middle-column">
-            <div id="box5">
-                GeeksforGeeks 5
-            </div>
-            <div id="box6">
-                GeeksforGeeks 6
-            </div>
-            <div id="box7">
-                GeeksforGeeks 7
-            </div>
-        </div>
-        <div id="box8">
-            GeeksforGeeks 8
-        </div>
+  <div class="wrapper">
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores tempora repudiandae impedit atque quod rerum veritatis pariatur facere. Optio, molestiae. Sunt asperiores architecto magni assumenda sint excepturi voluptates perferendis.
     </div>
-</div>
-</body>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem non ducimus in placeat dignissimos eligendi magni rerum mollitia velit quaerat doloremque maiores, asperiores corrupti sunt nobis quas deserunt vero laudantium.
+    </div>
 
+  </div>
+</body>
 </html>
+
+
+/*
+https://www.youtube.com/watch?v=jV8B24rSN5o&t=1497s
+*/
