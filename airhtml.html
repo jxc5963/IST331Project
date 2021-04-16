@@ -5,9 +5,10 @@
   <style>
     .wrapper{
       display:grid;
+      grid-template-columns: 2fr 1fr 1fr ;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
       grid-gap:1em;
     }
-
     .wrapper > div{
       background:rgb(194, 20, 20);
       padding:1em;
@@ -15,57 +16,46 @@
     .wrapper > div:nth-child(odd){
       background:greenyellow;
     }
-
     .Scope-Settings{
       grid-column: 1 ;
       grid-row: 1;
       height: 100px;
-
     }
-
     .Timer-Speed{
       height: 100px;
       grid-column: 2 ;
       grid-row: 1;
     }
-    
     .Simulation-Settings{
       height: 350px;
       grid-column: 3 ;
       grid-row: 1;
     }
-
     .Scope{
       height: 800px;
       grid-column: 1 ;
       grid-row: 2;
-      
     }
-
     .Flight-List{
       height:600px;
       grid-column: 2 ;
       grid-row: 2;
     }
-
     .Command-Bar{
       height: 50px;
       width: 80px;
       grid-column: 2 ;
       grid-row: 3;
     }
-
     .Flight-Strip{
       height: 150px;
       grid-column: 1 ;
       grid-row: 3;
     }
-
     .Keyboard{
       grid-column: 2 ;
       grid-row: 4;
     }
-
   </style>
 </head>
 <body>

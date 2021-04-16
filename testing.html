@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestingHTML</title>
+  <style>
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "Scope-settings Scope-settings Timer Simulation"
+      "Scope Scope Flight-List Simulation"
+      "Scope Scope Command-Bar Command-Bar"
+      "Flight-Strips Flight-Strips Keyboard Keyboard";
+  }
+    .grid-container > div{
+      background:rgb(194, 20, 20);
+      padding:1em;
+    }
+    .grid-container > div:nth-child(odd){
+      background:greenyellow;
+    }
+
+  
+  .Scope-settings { grid-area: Scope-settings; }
+  
+  .Scope { grid-area: Scope; }
+  
+  .Timer { grid-area: Timer; }
+  
+  .Simulation { grid-area: Simulation; }
+  
+  .Flight-List { grid-area: Flight-List; }
+  
+  .Command-Bar { grid-area: Command-Bar; }
+  
+  .Flight-Strips { grid-area: Flight-Strips; }
+  
+  .Keyboard { grid-area: Keyboard; }
+  
+</style>
+</head>
+<body>
+
+  <div class="grid-container">
+    <div class="Scope-settings">scope</div>
+    <div class="Scope">asdasd</div>
+    <div class="Timer">asdfasdfasdf</div>
+    <div class="Simulation">asdfasdf</div>
+    <div class="Flight-List">asdfas</div>
+    <div class="Command-Bar">asdf</div>
+    <div class="Flight-Strips">asdf</div>
+    <div class="Keyboard">asdf</div>
+</div>
+</body>
+</html>
