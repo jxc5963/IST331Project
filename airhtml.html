@@ -3,6 +3,12 @@
 <head>
   <title>AirHTML</title>
   <style>
+    .wrapper{
+      display:grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-gap:1em;
+    }
+
     .wrapper > div{
       background:rgb(194, 20, 20);
       padding:1em;
@@ -11,17 +17,51 @@
       background:#ddd;
     }
 
+    .Scope-Settings{
+      height:100px ;
+    }
+
+    .Timer-Speed{
+      height: 100px;
+    }
+    
+    .Simulation-Settings{
+      height: 350px;
+    }
+
+    .Scope{
+      height: 800px;
+      
+    }
+
+    .Flight-List{
+      height:600px;
+    }
+
+    .Command-Bar{
+      height: 50px;
+    }
+
+    .Flight-Strip{
+      height: 150px;
+    }
+
+    .Keyboard{
+      add
+    }
 
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolores tempora repudiandae impedit atque quod rerum veritatis pariatur facere. Optio, molestiae. Sunt asperiores architecto magni assumenda sint excepturi voluptates perferendis.
-    </div>
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem non ducimus in placeat dignissimos eligendi magni rerum mollitia velit quaerat doloremque maiores, asperiores corrupti sunt nobis quas deserunt vero laudantium.
-    </div>
+    <div class="box Scope-Settings">Scope Settings</div>
+    <div class="box Timer-Speed">Timer/Speed</div>
+    <div class="box Simulation-Settings">Simulation Settings</div>
+    <div class="box Scope">Scope</div>
+    <div class="box Flight-List">Flight List</div>
+    <div class="box Command-Bar">Command Bar</div>
+    <div class="box Flight-Strip">Flight Strip</div>
+    <div class="box Keyboard">Keyboard</div>
 
   </div>
 </body>
