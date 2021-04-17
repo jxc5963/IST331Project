@@ -4,7 +4,7 @@ import tkinter
 
 Keyboard_App= tkinter.Tk()
 Keyboard_App.title ("Keyboard")
-Keyboard_App ['bg']='sky blue'
+Keyboard_App ['bg']='powder blue'
 Keyboard_App.resizable(0,0)
 
 def select (value):
@@ -18,10 +18,12 @@ def select (value):
 
 label = Label(Keyboard_App, text="Keyboard", font=('arial',15,'bold'),
               bg='sky blue',fg="#000000").grid(row=0, columnspan = 40)
-entry = Text(Keyboard_App, width=120, font=('arial',8,'bold'))
-entry.grid(row=1, columnspan = 30)
+entry = Text(Keyboard_App, width=118, font=('arial',8,'bold'))
+entry.grid(row=1, columnspan = 40)
 
 buttons=[
+    'INTCNTL','TRKRPOS','TERMCNTL','HNDOFF','FLTDATA','MULTFUNC',
+    'F9','F10','F11','F12''F13','F14','TGT GEN''F6',
     '!','q','w','e','r','t','y','u','i','o','p','<-','7','8','9','-',
     'Tab','a','s','d','f','g','h','j','k','l','[',']','4','5','6','+',
     'SHIFT','z','x','c','v','b','n','m',',','.','?','SHIFT','1','2','3','/',
@@ -40,17 +42,17 @@ for button in buttons:
                         activebackground='#ffffff',activeforeground='#000990',relief='raised',
                         command= command).grid(row=varRow,column=varColumn)
     if button == " Space":
-        tkinter.Button(Keyboard_App,text=button,width=118,padx =3,pady=3,bd=12,
+        tkinter.Button(Keyboard_App,text=button,width=300,padx =3,pady=3,bd=12,
                         font=('arial',12,'bold'),bg='sky blue',
                         activebackground='#ffffff',activeforeground='#000990',relief='raised',
                         command = command).grid(row=6,column=varColumn)
 
     varColumn+=1
-    if varColumn > 15 and varRow ==2:
+    if varColumn > 17 and varRow ==2:
         varColumn =0
         varRow +=1 
 
-    if varColumn > 15 and varRow ==3:
+    if varColumn > 17 and varRow ==3:
         varColumn =0
         varRow +=1 
 
