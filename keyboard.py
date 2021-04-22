@@ -22,8 +22,7 @@ entry = Text(Keyboard_App, width=118, font=('arial',8,'bold'))
 entry.grid(row=1, columnspan = 40)
 
 buttons=[
-    'INTCNTL','TRKRPOS','TERMCNTL','HNDOFF','FLTDATA','MULTFUNC',
-    'F9','F10','F11','F12''F13','F14','TGT GEN''F6',
+    'INTCNTL','TRKRPOS','TERMCNTL','HNDOFF','FLTDATA','MULTFUNC','F9','F10','F11','F12''F13','F14','TGT GEN''F6',
     '!','q','w','e','r','t','y','u','i','o','p','<-','7','8','9','-',
     'Tab','a','s','d','f','g','h','j','k','l','[',']','4','5','6','+',
     'SHIFT','z','x','c','v','b','n','m',',','.','?','SHIFT','1','2','3','/',
@@ -48,11 +47,11 @@ for button in buttons:
                         command = command).grid(row=6,column=varColumn)
 
     varColumn+=1
-    if varColumn > 17 and varRow ==2:
+    if varColumn > 15 and varRow ==2:
         varColumn =0
         varRow +=1 
 
-    if varColumn > 17 and varRow ==3:
+    if varColumn > 15 and varRow ==3:
         varColumn =0
         varRow +=1 
 
