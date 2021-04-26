@@ -15,4 +15,6 @@ label = Label(root, font=("ds-digital", 80))
 label.pack(anchor = "center")
 time()
 
+print("Arrival Time: ", )
+print("Depature Time: ", )
 mainloop()

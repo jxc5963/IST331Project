@@ -1,7 +1,7 @@
 from tkinter import *
 
 fenster = Tk()
-fenster.title("SimulationSettings")
+fenster.title("ScopeSettings")
 
 def switch():
     if b1["state"] == "normal":
