@@ -8,8 +8,8 @@ def switch():
         b1["state"] = "disabled"
         b2["text"] = "enable"
     elif b3["state"] == "normal":
-         b1["state"] = "disabled"
-         b2["text"] = "enable"
+        b1["state"] = "disabled"
+        b2["text"] = "enable"
     else:
         b1["state"] = "normal"
         b2["text"] = "disable"
