@@ -30,7 +30,7 @@ key.maxsize(width=1150, height=400)      # maximum size
 key.minsize(width= 1150 , height = 400)     # minimum size
 # end window size
 
-key.configure(bg = 'green')    #  add background color
+key.configure(bg = 'grey')    #  add background color
 
 # entry box
 equation = tk.StringVar()
@@ -49,10 +49,10 @@ Back_Space = ttk.Button(key,text = 'Back Space' , width = 6, command = lambda : 
 Back_Space.grid(row = 1 , column = 1, ipadx = 6 , ipady = 10)
 
 E = ttk.Button(key,text = 'Space' , width = 6, command = lambda : press(''))
-E.grid(row = 1 , columnspan = 16, ipadx = 320 , ipady = 8)
+E.grid(row = 1 , columnspan = 15, ipadx = 226 , ipady = 10)
 
 R = ttk.Button(key,text = 'Enter' , width = 6, command = action)
-R.grid(row = 1 , columnspan = 90, ipadx = 26, ipady = 10)
+R.grid(row = 1 , column = 9, ipadx = 6, ipady = 10)
 
 T = ttk.Button(key,text = 'INT CNTL' , width = 6, command = lambda : press('INT CNTL'))
 T.grid(row = 2 , column = 0, ipadx = 6 , ipady = 10)
