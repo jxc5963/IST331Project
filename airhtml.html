@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AirHTML</title>
+  <style>
+    .wrapper{
+      display:grid;
+      grid-template-columns: 2fr 1fr 1fr ;
+      /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
+      grid-gap:1em;
+    }
+    .wrapper > div{
+      /*background:rgb(194, 20, 20);*/
+      padding:1em;
+    }
+    /*.wrapper > div:nth-child(odd){
+      background:greenyellow;
+    }*/
+    .Scope-Settings{
+      grid-column: 1 ;
+      grid-row: 1/3;
+      /*height: 100px;*/
+      background:rgb(194, 20, 20);
+    }
+    .Timer-Speed{
+      /*height: 100px;*/
+      grid-column: 2 ;
+      grid-row: 1/3;
+      background:rgb(49, 194, 20);
+    }
+    .Simulation-Settings{
+      /*height: 350px;*/
+      grid-column: 3 ;
+      grid-row: 1/14;
+      background:rgb(253, 135, 38);
+    }
+    .Scope{
+      /*height: 800px;*/
+      grid-column: 1 ;
+      grid-row: 3/25;
+      background:rgb(30, 255, 169);
+    }
+    .Keyboard{
+      /*height:600px;*/
+      grid-column: 2/4 ;
+      grid-row: 20/35;
+      background:rgb(20, 110, 194);
+      /*<input type= "keyboard" id= "script" name= "keyboard" value="Run Script" onclick= "exec('python keyboard.py');"/>*/
+    }
+    .Flight-List{
+      /*height: 50px;*/
+      /*width: 80px;*/
+      grid-column: 2 ;
+      grid-row: 3/14;
+      background:rgb(116, 20, 194);
+    }
+    .Flight-Strip{
+      /*height: 150px;*/
+      grid-column: 1 ;
+      grid-row: 25/35;
+      background:rgb(194, 20, 136);
+    }
+    .Command-Bar{
+      grid-column: 2/4 ;
+      grid-row: 14/20;
+      background:rgb(20, 188, 194);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="box Scope-Settings">Scope Settings</div>
+    <div class="box Timer-Speed">Timer/Speed
+        <input type="button" id="script" name="scriptbutton" value="run script" onclick= "exec('python timer.py');">
+    </div>
+    <div class="box Simulation-Settings">Simulation Settings</div>
+    <div class="box Scope">Scope</div>
+    <div class="box Flight-List">Flight List</div>
+    <div class="box Command-Bar">Command Bar</div>
+    <div class="box Flight-Strip">Flight Strip</div>
+    <div class="box Keyboard">Keyboard
+        <iframe src= "C:\Users\Owner\Downloads\IST331Project-main\IST331Project\keyboard.py"></iframe>
+    </div>
+
+  </div>
+</body>
+</html>
+
+
+/*
+https://www.youtube.com/watch?v=jV8B24rSN5o&t=1497s
+*/
