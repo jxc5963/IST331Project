@@ -1,0 +1,19 @@
+[
+    {
+        "flightId": "DA6789",
+        "aircraftType": "C172", 
+        "altitude": 2650,
+        "groundspeed": 200,
+        "startTime": 10,
+        "origin": {
+            "name": "PHL",
+            "lat": 39.8729,
+            "long": -75.2437
+        },
+        "destination": {
+            "name": "JFK",
+            "lat": 40.6413,
+            "long": -73.7781
+        }
+    }
+]
