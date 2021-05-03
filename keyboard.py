@@ -11,6 +11,11 @@ def press(num):
     exp=exp + str(num)
     equation.set(exp)
 
+def back(num):
+    global exp
+    exp=exp - str(num)
+    equation.set(exp)
+
 def clear():
     global exp
     exp = " "
@@ -45,11 +50,12 @@ Dis_entry.grid(rowspan= 1 , columnspan = 100, ipadx = 999 , ipady = 20)
 clear1 = ttk.Button(key,text = 'Clear' , width = 6, command =clear)
 clear1.grid(row = 1 ,column = 0, ipadx = 6 , ipady = 10)
 
-Back_Space = ttk.Button(key,text = 'Back Space' , width = 6, command = lambda : press('Back Space'))
+Back_Space = ttk.Button(key,text = 'Back Space' , width = 6, command = back(str(exp)))
 Back_Space.grid(row = 1 , column = 1, ipadx = 6 , ipady = 10)
 
-E = ttk.Button(key,text = 'Space' , width = 6, command = lambda : press(''))
+E = ttk.Button(key,text = 'Space', width = 6, command = lambda : press(' '))
 E.grid(row = 1 , columnspan = 15, ipadx = 226 , ipady = 10)
+#E.configure(bg = 'yellow') 
 
 R = ttk.Button(key,text = 'Enter' , width = 6, command = action)
 R.grid(row = 1 , column = 9, ipadx = 6, ipady = 10)
