@@ -1,0 +1,74 @@
+[
+    {
+        "flightId": "AAL1234",
+        "aircraftType": "737", 
+        "altitude": 2500,
+        "groundsspeed": 200,
+        "startTime": 4,
+        "origin":{
+            "name": "ACY",
+            "lat": 39.45161279256644,
+            "long": -74.57473725659315
+        },
+        "destination":{
+            "name": "PHL",
+            "lat": 39.87286813352552,
+            "long": -75.24370693806067
+        }
+
+    }, 
+    {
+        "flightId": "DAL8577",
+        "aircraftType": "737", 
+        "altitude": 28000,
+        "groundsspeed": 500,
+        "startTime": 6,
+        "origin":{
+            "name": "BWI",
+            "lat": 39.19179100915752, 
+            "long": -76.66508772780715
+        },
+        "destination":{
+            "name": "PHL",
+            "lat": 39.87286813352552,
+            "long": -75.24370693806067
+        }
+
+    }, 
+    {
+        "flightId": "JBU4417",
+        "aircraftType": "A321", 
+        "altitude": 30000,
+        "groundsspeed": 510,
+        "startTime": 4,
+        "origin":{
+            "name": "PHL",
+            "lat": 39.87286813352552, 
+            "long": -75.24370693806067
+        },
+        "destination":{
+            "name": "BOS",
+            "lat": 42.365628230194,
+            "long": -71.00993016982733
+        }
+
+    }, 
+
+    {
+        "flightId": "DAL6789",
+        "aircraftType": "C172", 
+        "altitude": 31000,
+        "groundspeed": 490,
+        "startTime": 10,
+        "origin": {
+            "name": "PHL",
+            "lat": 39.8729,
+            "long": -75.2437
+        },
+        "destination": {
+            "name": "JFK",
+            "lat": 40.6413,
+            "long": -73.7781
+        }
+    }
+]

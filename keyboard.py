@@ -47,7 +47,7 @@ Dis_entry.grid(rowspan= 1 , columnspan = 100, ipadx = 999 , ipady = 20)
 
 # First Line Button
 
-clear1 = ttk.Button(key,text = 'Clear' , width = 6, command =clear)
+clear1 = ttk.Button(key,text = 'Clear', width = 6, command =clear)
 clear1.grid(row = 1 ,column = 0, ipadx = 6 , ipady = 10)
 
 Back_Space = ttk.Button(key,text = 'Back Space' , width = 6, command = back(str(exp)))
