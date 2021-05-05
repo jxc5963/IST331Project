@@ -14,7 +14,7 @@ API_KEY= 'AIzaSyC91eORDd5nWBrVCsmUCK3e4cnpYn5d9DQ'
 city= 'Philadelphia'
 zoom= 14
 size= '500x500'
-
+git p
 #URL2= MAP_URL + "center =" + city + "&zoom=" + str(zoom) + "size = &500x500&key="  + API_KEY
 response = requests.get(MAP_URL)
 
