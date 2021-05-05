@@ -1,6 +1,7 @@
 from tkinter import *
 import os
 import time
+import flask, render_template
 from time import strftime
 from functools import partial
 #import mysql.connector
@@ -14,6 +15,8 @@ from PIL import Image
 
 master = Tk()
 master.title("AirSimulation")
+
+app = Flask(__name__)
 
 def open_timer():
     timer = "timer.py"
