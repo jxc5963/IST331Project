@@ -110,6 +110,7 @@ f.pack(anchor = 'center',pady=5)
 start.pack(side="left") 
 stop.pack(side ="left") 
 reset.pack(side="left") 
+
 add.pack(side="left")
 sub.pack(side="left")
 
