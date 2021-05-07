@@ -20,31 +20,26 @@
       grid-column: 1 ;
       grid-row: 1/3;
       /*height: 100px;*/
-      background:rgb(194, 20, 20);
+      background:rgb(0, 0, 0);
     }
     .Timer-Speed{
       /*height: 100px;*/
-      grid-column: 2 ;
+      grid-column: 2/4 ;
       grid-row: 1/3;
-      background:rgb(49, 194, 20);
+      background:rgb(0, 0, 0);
     }
-    .Simulation-Settings{
-      /*height: 350px;*/
-      grid-column: 3 ;
-      grid-row: 1/14;
-      background:rgb(253, 135, 38);
-    }
+    
     .Scope{
       /*height: 800px;*/
       grid-column: 1 ;
-      grid-row: 3/25;
-      background:rgb(30, 255, 169);
+      grid-row: 3/1;
+      background:rgb(0, 0, 0);
     }
     .Keyboard{
       /*height:600px;*/
       grid-column: 2/4 ;
-      grid-row: 20/35;
-      background:rgb(20, 110, 194);
+      grid-row: 15;
+      background:rgb(0, 0, 0);
       /*<input type= "keyboard" id= "script" name= "keyboard" value="Run Script" onclick= "exec('python keyboard.py');"/>*/
     }
     .Flight-List{
@@ -52,18 +47,18 @@
       /*width: 80px;*/
       grid-column: 2 ;
       grid-row: 3/14;
-      background:rgb(116, 20, 194);
+      background:rgb(0, 0, 0);
     }
     .Flight-Strip{
       /*height: 150px;*/
       grid-column: 1 ;
-      grid-row: 25/35;
-      background:rgb(194, 20, 136);
+      grid-row: 15;
+      background:rgb(0, 0, 0);
     }
     .Command-Bar{
       grid-column: 2/4 ;
       grid-row: 14/20;
-      background:rgb(20, 188, 194);
+      background:rgb(0, 0, 0);
     }
   </style>
 </head>
@@ -96,7 +91,7 @@
         .cell {
           /*Should only display 1 digit. Hence height = line height of .numbers
           and width = width of .numbers*/
-          width: 0.65em;
+          width: 0.75em;
           height: 45px;
           font-size: 20px;
           overflow: hidden;
@@ -228,9 +223,47 @@
     </div>
     <div class="box Simulation-Settings">Simulation Settings</div>
     <div class="box Scope">Scope</div>
+      <IMG STYLE="position:absolute; TOP:10px; LEFT:10px; WIDTH:575px; HEIGHT:675px" SRC="Philadelphia.png">
     <div class="box Flight-List">Flight List</div>
+    <dl>
+      <dt style = "color: white; position:absolute; TOP:190px; LEFT:600px; FONT: 32px">Flight ID</dt>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:250px; LEFT:600px; FONT: 32px">JBU4417</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:300px; LEFT:600px; FONT: 32px">AAL1234</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:350px; LEFT:600px; FONT: 32px">DAL8577</dd>
+      <dt style = "color: white; position:absolute; TOP:190px; LEFT:675px; FONT: 32px">Aircraft Type</dt>
+      <dd style = "color: white; position:absolute; TOP:250px; LEFT:695px; FONT: 32px">A321</dd>
+      <dd style = "color: #ffffff; position:absolute; TOP:300px; LEFT:695px; FONT: 32px">737</dd>
+      <dd style = "color: #ffffff; position:absolute; TOP:350px; LEFT:695px; FONT: 32px">737</dd>
+      <dt style = "color: white; position:absolute; TOP:190px; LEFT:775px; FONT: 32px">Altitude</dt>
+      <dd style = "color: white; position:absolute; TOP:250px; LEFT:785px; FONT: 32px">2600</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:300px; LEFT:785px; FONT: 32px">2500</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:350px; LEFT:785px; FONT: 32px">26000</dd>
+      <dt style = "color: white; position:absolute; TOP:190px; LEFT:840px; FONT: 32px">Ground Speed</dt>
+      <dd style = "color: white; position:absolute; TOP:250px; LEFT:875px; FONT: 32px">530</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:300px; LEFT:875px; FONT: 32px">560</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:350px; LEFT:875px; FONT: 32px">500</dd>
+      <dt style = "color: white; position:absolute; TOP:190px; LEFT:955px; FONT: 32px">Departure Time</dt>
+      <dd style = "color: white; position:absolute; TOP:250px; LEFT:935px; FONT: 32px">2021-05-07 06:00:00</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:300px; LEFT:935px; FONT: 32px">2021-05-07 04:00:00</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:350px; LEFT:935px; FONT: 32px">2021-05-07 08:30:00</dd>
+      <dt style = "color: white; position:absolute; TOP:190px; LEFT: 1090px; FONT: 32px">Origin</dt>
+      <dd style = "color: white; position:absolute; TOP:250px; LEFT:1100px; FONT: 32px">PHL</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:300px; LEFT:1100px; FONT: 32px">ACY</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:350px; LEFT:1100px; FONT: 32px">BWI</dd>
+      <dt style = "color: white; position:absolute; TOP:190px; LEFT:1155px; FONT: 32px">Destination</dt>
+      <dd style = "color: white; position:absolute; TOP:250px; LEFT:1175px; FONT: 32px">BOS</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:300px; LEFT:1175px; FONT: 32px">PHL</dd>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:350px; LEFT:1175px; FONT: 32px">PHL</dd>
+    </dl>
     <div class="box Command-Bar">Command Bar</div>
     <div class="box Flight-Strip">Flight Strip</div>
+    <dt style = "color: white; position:absolute; TOP:725px; LEFT:40px; FONT: 62px">Flight ID</dt>
+      <dd style = "color: rgb(255, 255, 255); position:absolute; TOP:750px; LEFT:40px; FONT: 62px">JBU4417</dd>
+      <dt style = "color: white; position:absolute; TOP:725px; LEFT:185px; FONT: 62px">Altitude</dt>
+      <dd style = "color: white; position:absolute; TOP:750px; LEFT:195px; FONT: 62px">2600</dd>
+      <dt style = "color: white; position:absolute; TOP:725px; LEFT:330px; FONT: 62px">Ground Speed</dt>
+      <dd style = "color: white; position:absolute; TOP:750px; LEFT:365px; FONT: 62px">530</dd>
+    </dl>
     <div class="box Keyboard">Keyboard
       <link href = "keyboard.css" rel = "stylesheet">
       <div class="keyboard">
@@ -282,7 +315,7 @@
             <div>F8</div>
           </div>
           <div class="key--double" data-key="55">
-            <div>/_\</div>
+            <div>∆</div>
           </div>
           <div class="key--double" data-key="56">
             <div>.</div>
