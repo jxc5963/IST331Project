@@ -70,8 +70,161 @@
 <body>
   <div class="wrapper">
     <div class="box Scope-Settings">Scope Settings</div>
-    <div class="box Timer-Speed">Timer/Speed
-        <input type="button" id="script" name="scriptbutton" value="run script" onclick= "exec('timer.py');">
+    <div class="box Timer-Speed">Timer
+      <style>
+        * {margin: 0; padding: 0;}
+        
+        .container {
+          padding: 10px;
+          text-align: center;
+        }
+        
+        .timer {
+          padding: 10px;
+          background: linear-gradient(top, #222, #444);
+          overflow: hidden;
+          display: inline-block;
+          border: 7px solid #efefef;
+          border-radius: 5px;
+          position: relative;
+          
+          box-shadow: 
+            inset 0 -2px 10px 1px rgba(0, 0, 0, 0.75), 
+            0 5px 20px -10px rgba(0, 0, 0, 1);
+        }
+        
+        .cell {
+          /*Should only display 1 digit. Hence height = line height of .numbers
+          and width = width of .numbers*/
+          width: 0.65em;
+          height: 45px;
+          font-size: 20px;
+          overflow: hidden;
+          position: relative;
+          float: left;
+        }
+        
+        .numbers {
+          width: 0.6em;
+          line-height: 40px;
+          font-family: digital, arial, verdana;
+          text-align: center;
+          color: #fff;
+          
+          position: absolute;
+          top: 0;
+          left: 0;
+          
+          /*Glow to the text*/
+          text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+        }
+        
+        /*Styles for the controls*/
+        #timer_controls {
+          margin-top: -5px;
+        }
+        #timer_controls label {
+          cursor: pointer;
+          padding: 5px 10px;
+          background: #efefef;
+          font-family: arial, verdana, tahoma;
+          font-size: 11px;
+          border-radius: 0 0 3px 3px;
+        }
+        input[name="controls"] {display: none;}
+        
+        /*Control code*/
+        #stop:checked~.timer .numbers {animation-play-state: paused;}
+        #start:checked~.timer .numbers {animation-play-state: running;}
+        #reset:checked~.timer .numbers {animation: none;}
+        
+        .moveten {
+          /*The digits move but dont look good. We will use steps now
+          10 digits = 10 steps. You can now see the digits swapping instead of 
+          moving pixel-by-pixel*/
+          animation: moveten 1s steps(10, end) infinite;
+          /*By default animation should be paused*/
+          animation-play-state: paused;
+        }
+        .movesix {
+          animation: movesix 1s steps(6, end) infinite;
+          animation-play-state: paused;
+        }
+        
+        /*Now we need to sync the animation speed with time speed*/
+        /*One second per digit. 10 digits. Hence 10s*/
+        .second {animation-duration: 10s;}
+        .tensecond {animation-duration: 60s;} /*60 times .second*/
+        
+        .milisecond {animation-duration: 1s;} /*1/10th of .second*/
+        .tenmilisecond {animation-duration: 0.1s;}
+        .hundredmilisecond {animation-duration: 0.01s;}
+        
+        .minute {animation-duration: 600s;} /*60 times .second*/
+        .tenminute {animation-duration: 3600s;} /*60 times .minute*/
+        
+        .hour {animation-duration: 36000s;} /*60 times .minute*/
+        .tenhour {animation-duration: 360000s;} /*10 times .hour*/
+        
+        @keyframes moveten {
+          0% {top: 0;}
+          100% {top: -400px;} 
+          /*height = 40. digits = 10. hence -400 to move it completely to the top*/
+        }
+        
+        @keyframes movesix {
+          0% {top: 0;}
+          100% {top: -240px;} 
+          /*height = 40. digits = 6. hence -240 to move it completely to the top*/
+        }
+        
+        </style>
+        </head>
+        <body style="background-color:#000">
+        <div class="container">
+          <!-- time to add the controls -->
+          <input id="start" name="controls" type="radio" />
+          <input id="stop" name="controls" type="radio" />
+          <input id="reset" name="controls" type="radio" />
+          <div class="timer">
+            <div class="cell">
+              <div class="numbers tenhour moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell">
+              <div class="numbers hour moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell divider"><div class="numbers">:</div></div>
+            <div class="cell">
+              <div class="numbers tenminute movesix">0 1 2 3 4 5 6</div>
+            </div>
+            <div class="cell">
+              <div class="numbers minute moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell divider"><div class="numbers">:</div></div>
+            <div class="cell">
+              <div class="numbers tensecond movesix">0 1 2 3 4 5 6</div>
+            </div>
+            <div class="cell">
+              <div class="numbers second moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell divider"><div class="numbers">:</div></div>
+            <div class="cell">
+              <div class="numbers milisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell">
+              <div class="numbers tenmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+            <div class="cell">
+              <div class="numbers hundredmilisecond moveten">0 1 2 3 4 5 6 7 8 9</div>
+            </div>
+          </div>
+          <!-- Lables for the controls -->
+          <div id="timer_controls">
+            <label for="start">Start</label>
+            <label for="stop">Stop</label>
+            <label for="reset">Reset</label>
+          </div>
+        </div>
     </div>
     <div class="box Simulation-Settings">Simulation Settings</div>
     <div class="box Scope">Scope</div>
@@ -79,7 +232,221 @@
     <div class="box Command-Bar">Command Bar</div>
     <div class="box Flight-Strip">Flight Strip</div>
     <div class="box Keyboard">Keyboard
-        <iframe src= "C:\Users\Owner\Downloads\IST331Project-main\IST331Project\keyboard.py"></iframe>
+      <div class="keyboard">
+        <div class="keyboard__row keyboard__row--h1">
+          <div data-key="27" class="key--word">
+            <span>esc</span>
+          </div>
+          <div data-key="112" class="key--fn">
+            <span>F1</span>
+          </div>
+          <div data-key="113" class="key--fn">
+            <span>F2</span>
+          </div>
+          <div data-key="114" class="key--fn">
+            <span>F3</span>
+          </div>
+          <div data-key="115" class="key--fn">
+            <span>F4</span>
+          </div>
+          <div data-key="116" class="key--fn">
+            <span>F5</span>
+          </div>
+          <div data-key="117" class="key--fn">
+            <span>F6</span>
+          </div>
+          <div data-key="118" class="key--fn">
+            <span>F7</span>
+          </div>
+          <div data-key="119" class="key--fn">
+            <span>F8</span>
+          </div>
+          <div data-key="120" class="key--fn">
+            <span>F9</span>
+          </div>
+          <div data-key="121" class="key--fn">
+            <span>F10</span>
+          </div>
+          <div data-key="122" class="key--fn">
+            <span>F11</span>
+          </div>
+          <div data-key="123" class="key--fn">
+            <span>F12</span>
+          </div>
+          <div data-key="n/a" class="key--word">
+            <span>pwr</span>
+          </div>
+        </div>
+        <div class="keyboard__row">
+          <div class="key--double" data-key="192">
+            <div>~</div>
+            <div>`</div>
+          </div>
+          <div class="key--double" data-key="49">
+            <div>!</div>
+            <div>1</div>
+          </div>
+          <div class="key--double" data-key="50">
+            <div>@</div>
+            <div>2</div>
+          </div>
+          <div class="key--double" data-key="51">
+            <div>#</div>
+            <div>3</div>
+          </div>
+          <div class="key--double" data-key="52">
+            <div>$</div>
+            <div>4</div>
+          </div>
+          <div class="key--double" data-key="53">
+            <div>%</div>
+            <div>5</div>
+          </div>
+          <div class="key--double" data-key="54">
+            <div>^</div>
+            <div>6</div>
+          </div>
+          <div class="key--double" data-key="55">
+            <div>&</div>
+            <div>7</div>
+          </div>
+          <div class="key--double" data-key="56">
+            <div>*</div>
+            <div>8</div>
+          </div>
+          <div class="key--double" data-key="57">
+            <div>(</div>
+            <div>9</div>
+          </div>
+          <div class="key--double" data-key="48">
+            <div>)</div>
+            <div>0</div>
+          </div>
+          <div class="key--double" data-key="189">
+            <div>_</div>
+            <div>-</div>
+          </div>
+          <div class="key--double" data-key="187">
+            <div>+</div>
+            <div>=</div>
+          </div>
+          <div class="key--bottom-right key--word key--w4" data-key="8">
+            <span>delete</span>
+          </div>
+        </div>
+        <div class="keyboard__row">
+          <div class="key--bottom-left key--word key--w4" data-key="9">
+            <span>tab</span>
+          </div>
+          <div class="key--letter" data-char="Q">Q</div>
+          <div class="key--letter" data-char="W">W</div>
+          <div class="key--letter" data-char="E">E</div>
+          <div class="key--letter" data-char="R">R</div>
+          <div class="key--letter" data-char="T">T</div>
+          <div class="key--letter" data-char="Y">Y</div>
+          <div class="key--letter" data-char="U">U</div>
+          <div class="key--letter" data-char="I">I</div>
+          <div class="key--letter" data-char="O">O</div>
+          <div class="key--letter" data-char="P">P</div>
+          <div class="key--double" data-key="219" data-char="{[">
+            <div>{</div>
+            <div>[</div>
+          </div>
+          <div class="key--double" data-key="221" data-char="}]">
+            <div>}</div>
+            <div>]</div>
+          </div>
+          <div class="key--double" data-key="220" data-char="|\">
+            <div>|</div>
+            <div>\</div>
+          </div>
+        </div>
+        <div class="keyboard__row">
+          <div class="key--bottom-left key--word key--w5" data-key="20">
+            <span>caps lock</span>
+          </div>
+          <div class="key--letter" data-char="A">A</div>
+          <div class="key--letter" data-char="S">S</div>
+          <div class="key--letter" data-char="D">D</div>
+          <div class="key--letter" data-char="F">F</div>
+          <div class="key--letter" data-char="G">G</div>
+          <div class="key--letter" data-char="H">H</div>
+          <div class="key--letter" data-char="J">J</div>
+          <div class="key--letter" data-char="K">K</div>
+          <div class="key--letter" data-char="L">L</div>
+          <div class="key--double" data-key="186">
+            <div>:</div>
+            <div>;</div>
+          </div>
+          <div class="key--double" data-key="222">
+            <div>"</div>
+            <div>'</div>
+          </div>
+          <div class="key--bottom-right key--word key--w5" data-key="13">
+            <span>return</span>
+          </div>
+        </div>
+        <div class="keyboard__row">
+          <div class="key--bottom-left key--word key--w6" data-key="16">
+            <span>shift</span>
+          </div>
+          <div class="key--letter" data-char="Z">Z</div>
+          <div class="key--letter" data-char="X">X</div>
+          <div class="key--letter" data-char="C">C</div>
+          <div class="key--letter" data-char="V">V</div>
+          <div class="key--letter" data-char="B">B</div>
+          <div class="key--letter" data-char="N">N</div>
+          <div class="key--letter" data-char="M">M</div>
+          <div class="key--double" data-key="188">
+            <div>&lt;</div>
+            <div>,</div>
+          </div>
+          <div class="key--double" data-key="190">
+            <div>&gt;</div>
+            <div>.</div>
+          </div>
+          <div class="key--double" data-key="191">
+            <div>?</div>
+            <div>/</div>
+          </div>
+          <div class="key--bottom-right key--word key--w6" data-key="16-R">
+            <span>shift</span>
+          </div>
+        </div>
+        <div class="keyboard__row keyboard__row--h3">
+          <div class="key--bottom-left key--word">
+            <span>fn</span>
+          </div>
+          <div class="key--bottom-left key--word key--w1" data-key="17">
+            <span>control</span>
+          </div>
+          <div class="key--bottom-left key--word key--w1" data-key="18">
+            <span>option</span>
+          </div>
+          <div class="key--bottom-right key--word key--w3" data-key="91">
+            <span>command</span>
+          </div>
+          <div class="key--double key--right key--space" data-key="32" data-char=" ">
+            &nbsp;
+          </div>
+          <div class="key--bottom-left key--word key--w3" data-key="93-R">
+            <span>command</span>
+          </div>
+          <div class="key--bottom-left key--word key--w1" data-key="18-R">
+            <span>option</span>
+          </div>
+          <div data-key="37" class="key--arrow">
+            <span>&#9664;</span>
+          </div>
+          <div class="key--double key--arrow--tall" data-key="38">
+            <div>&#9650;</div>
+            <div>&#9660;</div>
+          </div>
+          <div data-key="39" class="key--arrow">
+            <span>&#9654;</span>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
